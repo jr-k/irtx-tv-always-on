@@ -1,7 +1,8 @@
 #!/bin/bash
 
-STEPS=11
+STEPS=12
 CURSTEP=1
+SLEEPTIME=2
 
 # Install LIRC
 echo "[$CURSTEP/$STEPS] LIRC installation..."
@@ -94,6 +95,14 @@ systemctl enable lircd-tx
 
 # Create /usr/local/bin/irtx script and make it executable
 echo "[$CURSTEP/$STEPS] IRTX script installation"
+sleep 2 && ((CURSTEP++))
+cat > /usr/local/bin/irtx <<EOF
+#!/bin/sh
+exec /usr/bin/irsend --device=/var/run/lirc/l
+
+
+# Create Remotes directory
+echo "[$CURSTEP/$STEPS] Remote directory"
 sleep 2 && ((CURSTEP++))
 cat > /usr/local/bin/irtx <<EOF
 #!/bin/sh

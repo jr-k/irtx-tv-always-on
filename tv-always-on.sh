@@ -3,11 +3,12 @@
 while true; do
   tv_state=$(echo 'pow 0' | cec-client -s -d 1)
 
-  if [[ $tv_state == *'on'* ]]; then
-    echo "La TV est allumée."
+  if [[ $tv_state == *'status: on'* ]]; then
+    echo "TV is ON."
   else
-    echo "La TV est éteinte."
+    echo "TV is OFF, trying to power on..."
+    ./tv-power-on.sh
   fi
 
-  sleep 60
+  sleep 5
 done

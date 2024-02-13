@@ -23,27 +23,38 @@ sudo systemctl daemon-reload
 sudo systemctl enable tv-always-on
 ```
 
-## 4. Run
-```bash
-sudo systemctl start tv-always-on
-```
+## 4. RaspberryPi wiring
 
-## 5. RaspberryPi wiring
+- GPIO17: Receiver signal
+- GPIO18: Emitter signal
 
-- GPIO17: Receiver
-- GPIO18: Emitter
-
-## 6. Debug
+## 5. Learn power button & test
 
 ### Capture remote
-Let's try to capture power buttons and three channel buttons
+Let's try to capture power button (Ignore capture errors and push button until process ends).
+**Replace philips_tv by any name you want**
 ```bash
-irrx philips_tv power 1 2 3
+irrx philips_tv power
 ```
 
+Test your new gpio remote
 ### Replay remote
 ```bash
 irtx philips_tv power
+```
+
+
+## 6. Configure (again)
+```bash
+sudo cp tv-power-on.sh.dist tv-power-on.sh
+sudo chmod +x tv-power-on.sh
+sudo nano tv-power-on.sh # add your emitter command: irtx philips_tv power
+```
+
+
+## 7. Run
+```bash
+sudo systemctl start tv-always-on
 ```
 
 

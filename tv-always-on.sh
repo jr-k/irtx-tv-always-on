@@ -1,5 +1,8 @@
 #!/bin/bash
 
+sleep 5
+systemctl restart pigpiod
+
 while true; do
   tv_state=$(echo 'pow 0' | cec-client -s -d 1)
 

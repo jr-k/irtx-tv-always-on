@@ -1,0 +1,15 @@
+[Unit]
+Description=TV Always on
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/opt/irtx-tv-always-on
+ExecStart=/opt/irtx-tv-always-on/tv-always-on.sh
+Restart=always
+RestartSec=5
+StandardOutput=inherit
+StandardError=inherit
+
+[Install]
+WantedBy=multi-user.target

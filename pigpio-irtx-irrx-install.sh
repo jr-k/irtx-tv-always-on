@@ -1,9 +1,9 @@
 #!/bin/bash
 
+REMOTES_DIR="/home/pi/Remotes"
 STEPS=7
 CURSTEP=1
 SLEEPTIME=2
-REMOTES_DIR="/home/pi/Remotes"
 
 # Download pigpio
 echo "[$CURSTEP/$STEPS] Pigpio downloading..."

@@ -104,5 +104,5 @@ EOF
 # Create Remotes directory
 echo "[$CURSTEP/$STEPS] Remote directory"
 sleep 2 && ((CURSTEP++))
-ln -s /etc/lirc/lircd.conf.d ~/Remotes
+ln -s /etc/lirc/lircd.conf.d ~/Remotes 2>/dev/null
 cd ~/Remotes

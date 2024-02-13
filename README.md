@@ -20,7 +20,8 @@ sudo apt install -y cec-utils pigpiod
 sudo ./pigpio-irtx-irrx-install.sh
 sudo cp ./tv-always-on.service /etc/systemd/system
 sudo systemctl daemon-reload
-sudo systemctl enable tv-always-on pigpiod
+sudo systemctl enable tv-always-on
+sudo systemctl enable pigpiod
 ```
 
 ## 4. RaspberryPi wiring
@@ -56,7 +57,8 @@ sudo nano tv-power-on.sh # add your emitter command: irtx [your_remote_name] pow
 
 ## 7. Run
 ```bash
-sudo systemctl start tv-always-on pigpiod
+sudo systemctl start tv-always-on
+sudo systemctl start pigpiod
 ```
 
 

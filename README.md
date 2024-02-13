@@ -1,7 +1,12 @@
 TV-ALWAYS-ON
 =
 
-##  1. Download
+## 0. Hardware
+- RaspberryPi 4
+- TV with CEC enabled
+- TV connected to HDMI-0 RaspberryPi 4 (**not HDMI-1 !**)
+
+## 1. Download
 ```bash
 cd /opt
 sudo git clone https://github.com/jr-k/irtx-tv-always-on && cd irtx-tv-always-on

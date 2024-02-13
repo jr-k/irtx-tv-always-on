@@ -98,12 +98,11 @@ echo "[$CURSTEP/$STEPS] IRTX script installation"
 sleep 2 && ((CURSTEP++))
 cat > /usr/local/bin/irtx <<EOF
 #!/bin/sh
-exec /usr/bin/irsend --device=/var/run/lirc/l
+exec /usr/bin/irsend --device=/var/run/lirc/lircd-tx "$@"
 EOF
 
 # Create Remotes directory
 echo "[$CURSTEP/$STEPS] Remote directory"
 sleep 2 && ((CURSTEP++))
-cat > /usr/local/bin/irtx <<EOF
-#!/bin/sh
-exec /usr/bin/irsend --device=/var/run/lirc/l
+ln -s /etc/lirc/lircd.conf.d ~/Remotes
+cd ~/Remotes

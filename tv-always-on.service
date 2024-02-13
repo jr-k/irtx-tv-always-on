@@ -1,5 +1,7 @@
 [Unit]
 Description=TV Always on
+After=pigpiod.service
+Requires=pigpiod.service
 
 [Service]
 User=root

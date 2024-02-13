@@ -50,7 +50,7 @@ irtx philips_tv power
 ```bash
 sudo cp tv-power-on.sh.dist tv-power-on.sh
 sudo chmod +x tv-power-on.sh
-sudo nano tv-power-on.sh # add your emitter command: irtx philips_tv power
+sudo nano tv-power-on.sh # add your emitter command: irtx [your_remote_name] power
 ```
 
 

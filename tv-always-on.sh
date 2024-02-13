@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo "TV Always On Daemon"
 sleep 5
 systemctl restart pigpiod
 

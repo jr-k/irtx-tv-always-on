@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SLEEPTIME=10
+SLEEPTIME=5
 
 echo "==================="
 echo "TV Always On Daemon"

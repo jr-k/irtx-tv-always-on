@@ -1,8 +1,14 @@
 #!/bin/bash
 
+SLEEPTIME=10
+
+echo "==================="
 echo "TV Always On Daemon"
-sleep 5
-systemctl restart pigpiod
+echo "==================="
+
+echo "Wait..."
+sleep 3
+echo "Forever loop..."
 
 while true; do
   tv_state=$(echo 'pow 0' | cec-client -s -d 1)
@@ -14,5 +20,5 @@ while true; do
     ./tv-power-on.sh
   fi
 
-  sleep 5
+  sleep $SLEEPTIME
 done

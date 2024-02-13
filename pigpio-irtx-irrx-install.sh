@@ -8,22 +8,22 @@ SLEEPTIME=2
 # Download pigpio
 echo "[$CURSTEP/$STEPS] Pigpio downloading..."
 sleep $SLEEPTIME && ((CURSTEP++))
-#cd /tmp && rm -rf master.zip 2>/dev/null && wget https://github.com/joan2937/pigpio/archive/master.zip && unzip master.zip && rm master.zip && cd pigpio-master
+cd /tmp && rm -rf master.zip 2>/dev/null && wget https://github.com/joan2937/pigpio/archive/master.zip && unzip master.zip && rm master.zip && cd pigpio-master
 
 # Install pigpio
 echo "[$CURSTEP/$STEPS] Pigpio installation..."
 sleep $SLEEPTIME && ((CURSTEP++))
-#make && make install
+make && make install
 
 # Configure pigpio daemon
 echo "[$CURSTEP/$STEPS] Pigpio configuration..."
 sleep $SLEEPTIME && ((CURSTEP++))
-# systemctl daemon-reload && systemctl enable pigpiod && systemctl start pigpiod
+systemctl daemon-reload && systemctl enable pigpiod && systemctl start pigpiod
 
 # Install irrp.py
 echo "[$CURSTEP/$STEPS] Irpp.py installation..."
 sleep $SLEEPTIME && ((CURSTEP++))
-#cd /tmp && rm -rf irrp_py.zip irrp.py 2>/dev/null && wget https://abyz.me.uk/rpi/pigpio/code/irrp_py.zip && unzip irrp_py.zip && chmod +x irrp.py && mv irrp.py /usr/local/bin/
+cd /tmp && rm -rf irrp_py.zip irrp.py 2>/dev/null && wget https://abyz.me.uk/rpi/pigpio/code/irrp_py.zip && unzip irrp_py.zip && chmod +x irrp.py && mv irrp.py /usr/local/bin/
 
 # Create /usr/local/bin/irtx script and make it executable
 echo "[$CURSTEP/$STEPS] IRTX script installation"

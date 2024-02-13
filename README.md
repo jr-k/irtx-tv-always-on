@@ -31,14 +31,16 @@ sudo systemctl enable tv-always-on
 ## 5. Learn power button & test
 
 ### Capture remote
-Let's try to capture power button (Ignore capture errors and push button until process ends).
-**Replace philips_tv by any name you want**
+Let's try to capture power button:
+- Replace philips_tv by any name you want
+- Ignore capture errors and push button until process ends
 ```bash
 irrx philips_tv power
 ```
 
-Test your new gpio remote
 ### Replay remote
+Test your newly created gpio remote
+- Replace philips_tv with remote name specified during capture process
 ```bash
 irtx philips_tv power
 ```

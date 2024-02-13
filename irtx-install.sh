@@ -99,7 +99,7 @@ sleep 2 && ((CURSTEP++))
 cat > /usr/local/bin/irtx <<EOF
 #!/bin/sh
 exec /usr/bin/irsend --device=/var/run/lirc/l
-
+EOF
 
 # Create Remotes directory
 echo "[$CURSTEP/$STEPS] Remote directory"

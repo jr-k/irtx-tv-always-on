@@ -3,7 +3,7 @@ TV-ALWAYS-ON
 
 ## 0. Hardware
 - RaspberryPi 4
-- TV with CEC enabled
+- TV with HDMI-CEC enabled
 - TV connected to HDMI-0 RaspberryPi 4 (**not HDMI-1 !**)
 
 ## 1. Download

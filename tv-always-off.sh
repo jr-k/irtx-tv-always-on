@@ -15,7 +15,7 @@ while true; do
 
   if [[ $tv_state == *'status: on'* ]]; then
     echo "TV is ON, trying to power off..."
-    ./tv-power-on.sh
+    ./tv-power-off.sh
   else
     echo "TV is OFF."
   fi

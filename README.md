@@ -24,8 +24,10 @@ sudo apt update
 sudo apt install -y cec-utils pigpiod
 sudo ./pigpio-irtx-irrx-install.sh
 sudo cp ./tv-always-on.service /etc/systemd/system
+sudo cp ./tv-always-off.service /etc/systemd/system
 sudo systemctl daemon-reload
 sudo systemctl enable tv-always-on
+sudo systemctl enable tv-always-off
 sudo systemctl enable pigpiod
 ```
 
@@ -55,8 +57,11 @@ irtx philips_tv power
 ## 6. Configure (again)
 ```bash
 sudo cp tv-power-on.sh.dist tv-power-on.sh
+sudo cp tv-power-off.sh.dist tv-power-off.sh
 sudo chmod +x tv-power-on.sh
+sudo chmod +x tv-power-off.sh
 sudo nano tv-power-on.sh # add your emitter command: irtx [your_remote_name] power
+sudo nano tv-power-off.sh # add your emitter command: irtx [your_remote_name] power
 ```
 
 
